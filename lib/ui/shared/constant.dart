@@ -77,6 +77,7 @@ List<int> kvColorList = [
   0xFF84C6BE,
   0xFF84A6C6,
   0xFF84A6C6,
+  0xFF848BC6,
   0xFF9D84C6,
   0xFFB984C6,
   0xFFC6848C,

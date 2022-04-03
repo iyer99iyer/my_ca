@@ -1,13 +1,10 @@
   on:
-    pull_request:
-      branches:
-        -main
-        -master
     push:
-      branches:
-        -main
-        -master
-        -develop
+      tags: v*
+#     branches: [ master ]
+    pull_request:
+      tags: v*
+#     branches: [ master ]
   name: "Build and Release"
   jobs:
     build:

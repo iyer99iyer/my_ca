@@ -1,10 +1,10 @@
   on:
     push:
       tags: v*
-#     branches: [ master ]
+     branches: [ main ]
     pull_request:
       tags: v*
-#     branches: [ master ]
+     branches: [ main ]
   name: "Build and Release"
   jobs:
     build:
@@ -22,5 +22,4 @@
           uses: ncipollo/release-action@v1.10.0
           with:
             artifacts: "build/app/outputs/flutter-apk/*"
-            tag: v1.0.${{ github.run_number }}
             token: ${{ secrets.TOKEN }}

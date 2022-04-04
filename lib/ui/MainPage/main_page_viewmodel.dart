@@ -9,6 +9,8 @@ import 'package:your_ca/ui/reports/reports_view.dart';
 import 'package:your_ca/ui/tax_saving/tax_saving_view.dart';
 import 'package:your_ca/ui/transaction/transaction_view.dart';
 
+import '../../app/app.router.dart';
+
 class MainPageViewModel extends BaseViewModel{
 
   final _navigationService = locator<NavigationService>();
@@ -16,10 +18,10 @@ class MainPageViewModel extends BaseViewModel{
 
   final screen = [
     HomeView(),
-    TaxSavingView(),
-    AddView(),
+    // TaxSavingView(),
+    // AddView(),
     TransactionView(),
-    ReportsView()
+    // ReportsView()
   ];
 
   Future init(int? currentIndex) async{
@@ -36,5 +38,12 @@ class MainPageViewModel extends BaseViewModel{
     print(value);
     currentIndex = value;
     notifyListeners();
+  }
+  navigateToAddCategory() {
+    _navigationService.navigateTo(Routes.addCategoryView);
+  }
+
+  navigateToAddTransaction() {
+    _navigationService.navigateTo(Routes.addTransactionView);
   }
 }

@@ -74,6 +74,7 @@ class AddCategoryView extends StatelessWidget with $AddCategoryView {
                                   verticalSpaceSmall,
                                   Expanded(
                                     child: GridView.builder(
+                                      shrinkWrap: true,
                                       itemCount: model.colorList.length,
                                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                                             crossAxisCount: 8,

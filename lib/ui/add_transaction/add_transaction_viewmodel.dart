@@ -116,14 +116,19 @@ class AddTransactionViewModel extends FormViewModel {
     recurring = transaction.recurring;
     // might have to edit
     currentCategory = transaction.category;
+    notifyListeners();
     _noteController.text = transaction.transactionNote;
+
     if (transaction.recurring) {
       // might have to edit
       currentRecurringDuration = transaction.recurringDuration;
+      // notifyListeners();
     } else if (!transaction.recurring && transaction.type != 'income') {
       _warrantyController.text = transaction.warranty == null ? '': transaction.warranty.toString();
       currentWarrantyDurationType = transaction.warrantyDurationType!;
     }
+
+
   }
 
   onTapType(int index) async {
@@ -252,7 +257,7 @@ class AddTransactionViewModel extends FormViewModel {
 
       // Clearing the Stack of Navigation and Navigating to Main Page View with Index 3 to go to transaction screen
       _navigationService
-          .clearTillFirstAndShowView(const MainPageView(currentIndex: 3));
+          .clearTillFirstAndShowView(const MainPageView(currentIndex: 1));
       reset();
     } else {
       //TODO: Add SnackBar
